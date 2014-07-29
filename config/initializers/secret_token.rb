@@ -1,4 +1,4 @@
-ure to restart your server when you modify this file.
+#sure to restart your server when you modify this file.
 
 # Your secret key is used for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
@@ -18,10 +18,10 @@ def secure_token
 	    File.read(token_file).chomp
 	      else
 	          # Generate a new token and store it in token_file.
-		      token = SecureRandom.hex(64)
-		          File.write(token_file, token)
-			      token
-			        end
-				end
+	          token = SecureRandom.hex(64)
+	          File.write(token_file, token)
+	      token
+        end
+end
 
-				SampleApp::Application.config.secret_key_base = secure_token
+SampleApp::Application.config.secret_key_base = secure_token
